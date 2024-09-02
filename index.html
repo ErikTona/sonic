@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonic</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        canvas {
+            background-color: blue; 
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="sonic" width="800" height="600"></canvas>
+    <script>
+        const canvas = document.getElementById("sonic");
+        const ctx = canvas.getContext("2d");
+
+         const sonic = new Image();
+        sonic.src = "sonic.png"; 
+
+        sonic.onload = function() {
+
+        ctx.fillStyle = "lime"; 
+        ctx.fillRect(0, 500, 800, 100); 
+
+        ctx.fillStyle = "brown"; 
+        ctx.fillRect(150, 350, 20, 150); 
+
+        ctx.fillStyle = "lime"; 
+        ctx.beginPath();
+        ctx.moveTo(160, 330); 
+        ctx.lineTo(110, 380); 
+        ctx.lineTo(210, 380); 
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(160, 320); 
+        ctx.lineTo(130, 390); 
+        ctx.lineTo(190, 390); 
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(160, 310); 
+        ctx.lineTo(150, 400); 
+        ctx.lineTo(170, 400);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.fillStyle = "lime"; 
+        ctx.fillRect(398, 480, 4, 20); 
+
+        ctx.fillStyle = "yellow"; 
+        ctx.beginPath();
+        ctx.arc(400, 475, 8, 0, Math.PI * 2);
+        ctx.arc(390, 485, 8, 0, Math.PI * 2); 
+        ctx.arc(410, 485, 8, 0, Math.PI * 2); 
+        ctx.arc(394, 495, 8, 0, Math.PI * 2); 
+        ctx.arc(406, 495, 8, 0, Math.PI * 2); 
+        ctx.fill();
+        
+        ctx.fillStyle = "brown"; 
+        ctx.beginPath();
+        ctx.arc(400, 485, 6, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.strokeStyle = "gold"; 
+        ctx.lineWidth = 5;
+
+        ctx.beginPath();
+        ctx.arc(200, 400, 15, 0, Math.PI * 2); 
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(350, 350, 15, 0, Math.PI * 2); 
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(500, 400, 15, 0, Math.PI * 2); 
+        ctx.stroke();
+
+        
+        ctx.fillStyle = "red"; 
+        ctx.fillRect(740, 400, 10, 100);
+        ctx.fillStyle = "yellow"; 
+
+        ctx.beginPath();
+        ctx.arc(745, 390, 15, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.drawImage(sonic, 600, 450, 50, 50); 
+
+        };
+    </script>
+</body>
+</html>
